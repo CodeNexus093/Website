@@ -1100,7 +1100,8 @@
     </div>
   </footer>
 
-  <script>
+  
+<script>
     /* ── SCROLL REVEAL ── */
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
@@ -1123,7 +1124,6 @@
     /* ── RESET MODAL WHEN REOPENED ── */
     document.getElementById('modal-toggle').addEventListener('change', function() {
       if (this.checked) {
-        // Reset to form view when reopening
         document.getElementById('modal-form-area').style.display = 'block';
         document.getElementById('success-msg').style.display = 'none';
         document.getElementById('submit-btn').disabled = false;
@@ -1133,91 +1133,147 @@
       }
     });
 
-    /* ── GOOGLE FORM HIDDEN SUBMISSION ──
-     * Form: https://forms.gle/CXiJBfDvFR1meKfs5
-     * Entry IDs: verify by right-clicking each field on the form → Inspect → find name="entry.XXXXXXX"
-     */
-    const FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSdrPlobngXvUDZ2l-JR_vltb_zmdYHQHhVtabDcFHZQUWT6Gg/formResponse';
+    /* ── GOOGLE FORM SUBMISSION ── */
+    const FORM_ACTION =
+      "https://docs.google.com/forms/d/e/1FAIpQLSdrPlobngXvUDZ2l-JR_vltb_zmdYHQHhVtabDcFHZQUWT6Gg/formResponse";
+
     const FIELDS = {
-      name:   'entry.839337160',
-      mobile: 'entry.1951564835',
-      email:  'entry.1648423629'
+      name: "entry.839337160",
+      mobile: "entry.1951564835",
+      email: "entry.1648423629"
     };
 
     async function submitForm() {
-      const name   = document.getElementById('inp-name').value.trim();
-      const mobile = document.getElementById('inp-mobile').value.trim();
-      const email  = document.getElementById('inp-email').value.trim();
+      const name = document.getElementById("inp-name").value.trim();
+      const mobile = document.getElementById("inp-mobile").value.trim();
+      const email = document.getElementById("inp-email").value.trim();
 
-      if (!name)   { highlight('inp-name');   return; }
-      if (!mobile) { highlight('inp-mobile'); return; }
-      if (!email || !email.includes('@')) { highlight('inp-email'); return; }
+      if (!name) {
+        highlight("inp-name");
+        return;
+      }
 
-      const btn     = document.getElementById('submit-btn');
-      const label   = document.getElementById('btn-label');
-      const spinner = document.getElementById('spinner');
-      const errMsg  = document.getElementById('error-msg');
+      if (!mobile) {
+        highlight("inp-mobile");
+        return;
+      }
+
+      if (!email || !email.includes("@")) {
+        highlight("inp-email");
+        return;
+      }
+
+      const btn = document.getElementById("submit-btn");
+      const label = document.getElementById("btn-label");
+      const spinner = document.getElementById("spinner");
+      const errMsg = document.getElementById("error-msg");
 
       btn.disabled = true;
-      label.textContent = 'Sending...';
-      spinner.style.display = 'block';
-      errMsg.style.display = 'none';
+      label.textContent = "Sending...";
+      spinner.style.display = "block";
+      errMsg.style.display = "none";
 
-      // Collect interest checkboxes
-      const chips = ['chip1','chip2','chip3','chip4','chip5','chip6'];
-      const labels = ['E-Commerce','Landing Page','Portfolio','Dashboard','Business Site','Blog'];
-      const selected = chips.map((id,i) => document.getElementById(id).checked ? labels[i] : null).filter(Boolean);
+      const chips = ["chip1","chip2","chip3","chip4","chip5","chip6"];
+
+      const labels = [
+        "E-Commerce",
+        "Landing Page",
+        "Portfolio",
+        "Dashboard",
+        "Business Site",
+        "Blog"
+      ];
+
+      const selected = chips
+        .map((id, i) =>
+          document.getElementById(id).checked ? labels[i] : null
+        )
+        .filter(Boolean);
 
       try {
-        const body = new URLSearchParams();
-        body.append(FIELDS.name,   name);
-        body.append(FIELDS.mobile, mobile);
-        body.append(FIELDS.email,  email);
-        // Append selected services as additional note (appended to name for visibility in responses)
-        if (selected.length) {
-          body.set(FIELDS.name, name + (selected.length ? ' [' + selected.join(', ') + ']' : ''));
-        }
+        const formData = new FormData();
+
+        const finalName =
+          selected.length > 0
+            ? `${name} [${selected.join(", ")}]`
+            : name;
+
+        formData.append(FIELDS.name, finalName);
+        formData.append(FIELDS.mobile, mobile);
+        formData.append(FIELDS.email, email);
 
         await fetch(FORM_ACTION, {
-          method:  'POST',
-          mode:    'no-cors',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body:    body.toString()
+          method: "POST",
+          mode: "no-cors",
+          body: formData
         });
 
         showSuccess();
+
+        document.getElementById("inp-name").value = "";
+        document.getElementById("inp-mobile").value = "";
+        document.getElementById("inp-email").value = "";
+
+        chips.forEach(id => {
+          document.getElementById(id).checked = false;
+        });
+
       } catch (err) {
+        console.error(err);
+
         btn.disabled = false;
-        label.textContent = 'Send My Details 🚀';
-        spinner.style.display = 'none';
-        errMsg.style.display = 'block';
+        label.textContent = "Send My Details 🚀";
+        spinner.style.display = "none";
+        errMsg.style.display = "block";
       }
     }
 
     function showSuccess() {
-      document.getElementById('modal-form-area').style.display = 'none';
-      document.getElementById('success-msg').style.display = 'block';
+      document.getElementById("modal-form-area").style.display = "none";
+      document.getElementById("success-msg").style.display = "block";
+
+      document.getElementById("submit-btn").disabled = false;
+      document.getElementById("btn-label").textContent =
+        "Send My Details 🚀";
+      document.getElementById("spinner").style.display = "none";
     }
 
     function resetModal() {
-      document.getElementById('modal-toggle').checked = false;
+      document.getElementById("modal-toggle").checked = false;
+
+      setTimeout(() => {
+        document.getElementById("modal-form-area").style.display = "block";
+        document.getElementById("success-msg").style.display = "none";
+        document.getElementById("error-msg").style.display = "none";
+      }, 200);
     }
 
     function highlight(id) {
       const el = document.getElementById(id);
-      el.style.borderColor = '#ff6b6b';
-      el.style.boxShadow = '0 0 0 3px rgba(255,107,107,0.15)';
+
+      el.style.borderColor = "#ff6b6b";
+      el.style.boxShadow =
+        "0 0 0 3px rgba(255,107,107,0.15)";
+
       el.focus();
-      setTimeout(() => { el.style.borderColor = ''; el.style.boxShadow = ''; }, 2500);
+
+      setTimeout(() => {
+        el.style.borderColor = "";
+        el.style.boxShadow = "";
+      }, 2500);
     }
 
     ['inp-name','inp-mobile','inp-email'].forEach(id => {
-      document.getElementById(id).addEventListener('keydown', e => { if (e.key === 'Enter') submitForm(); });
+      document.getElementById(id).addEventListener('keydown', e => {
+        if (e.key === 'Enter') submitForm();
+      });
+
       document.getElementById(id).addEventListener('input', () => {
         document.getElementById(id).style.borderColor = '';
         document.getElementById(id).style.boxShadow = '';
       });
     });
-  </script>
+</script>
+
 </body>
 </html>
