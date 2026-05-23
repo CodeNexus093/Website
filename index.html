@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CodeNexus – Build Any Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -13,12 +13,12 @@
       --surface: #ffffff;
       --card: #ffffff;
       --border: #e2e8f0;
-      --accent: #06b6d4;
-      --accent2: #6366f1;
-      --accent3: #f43f5e;
+      --accent: #8b5cf6;
+      --accent2: #ec4899;
+      --accent3: #14b8a6;
       --text: #0f172a;
       --muted: #475569;
-      --grad: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
+      --grad: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
       --insta-grad: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     }
 
@@ -27,7 +27,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Manrope', sans-serif;
       font-size: 16px;
       line-height: 1.6;
       overflow-x: hidden;
@@ -84,7 +84,7 @@
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .logo-svg { width: 38px; height: 38px; flex-shrink: 0; }
     .logo-text {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-weight: 800;
       font-size: 1.3rem;
       background: var(--grad);
@@ -241,7 +241,7 @@
     }
 
     .modal-box h2 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: 1.7rem;
       font-weight: 800;
       letter-spacing: -0.5px;
@@ -303,7 +303,7 @@
     }
 
     h1 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: clamp(2.4rem, 6vw, 4.5rem);
       font-weight: 800;
       line-height: 1.15;
@@ -343,7 +343,7 @@
       border-radius: 8px;
     }
     h2 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Outfit', sans-serif;
       font-size: clamp(1.85rem, 4vw, 2.7rem);
       font-weight: 800;
       letter-spacing: -1px;
@@ -351,12 +351,16 @@
       margin-bottom: 16px;
       color: var(--text);
     }
-    .section-sub {
+    
+.section-sub {
       color: var(--muted);
       font-size: 1.05rem;
-      max-width: 520px;
+      max-width: 760px;
       margin: 0 auto 50px;
+      font-weight: 600;
+      line-height: 1.8;
     }
+
 
     /* ── SERVICES ── */
     #services { padding: 90px 5%; text-align: center; }
@@ -386,7 +390,7 @@
       font-size: 1.4rem;
       background: #f1f5f9;
     }
-    .service-card h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.15rem; margin-bottom: 10px; color: var(--text); }
+    .service-card h3 { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.15rem; margin-bottom: 10px; color: var(--text); }
     .service-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
     .card-get-started {
       display: inline-flex;
@@ -402,8 +406,8 @@
     #how { padding: 90px 5%; text-align: center; background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
     .step { padding: 32px 24px; background: var(--bg); border: 1px solid var(--border); border-radius: 20px; text-align: center; }
-    .step-num { font-family: 'Syne', sans-serif; font-size: 2.6rem; font-weight: 800; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 10px; }
-    .step h3 { font-family: 'Syne', sans-serif; font-weight: 700; margin-bottom: 10px; font-size: 1.1rem; color: var(--text); }
+    .step-num { font-family: 'Outfit', sans-serif; font-size: 2.6rem; font-weight: 800; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 10px; }
+    .step h3 { font-family: 'Outfit', sans-serif; font-weight: 700; margin-bottom: 10px; font-size: 1.1rem; color: var(--text); }
     .step p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
 
     /* ── PRICING ── */
@@ -413,8 +417,8 @@
     .pricing-card.featured { border-color: var(--accent2); box-shadow: 0 16px 40px rgba(99, 102, 241, 0.05); }
     .badge-popular { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--grad2); color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; }
     .pricing-plan { font-size: 0.8rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; font-weight: 600; }
-    .pricing-price { font-family: 'Syne', sans-serif; font-size: 2.8rem; font-weight: 800; line-height: 1; margin-bottom: 8px; color: var(--text); }
-    .pricing-price sub { font-size: 0.9rem; font-weight: 500; color: var(--muted); font-family: 'Plus Jakarta Sans', sans-serif; }
+    .pricing-price { font-family: 'Outfit', sans-serif; font-size: 2.8rem; font-weight: 800; line-height: 1; margin-bottom: 8px; color: var(--text); }
+    .pricing-price sub { font-size: 0.9rem; font-weight: 500; color: var(--muted); font-family: 'Manrope', sans-serif; }
     .pricing-free-badge { display: inline-block; background: rgba(6, 182, 212, 0.08); color: var(--accent); border: 1px solid rgba(6, 182, 212, 0.15); border-radius: 8px; padding: 4px 12px; font-size: 0.8rem; font-weight: 700; margin-bottom: 14px; }
     .pricing-desc { color: var(--muted); font-size: 0.92rem; margin-bottom: 24px; }
     .pricing-features { list-style: none; margin-bottom: 30px; display: flex; flex-direction: column; gap: 12px; }
@@ -434,20 +438,114 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ── COMPACT PHONE VIEW REFINEMENTS ── */
-    @media (max-width: 640px) {
-      .top-contact-banner { font-size: 0.8rem; padding: 8px 4%; line-height: 1.4; }
-      nav { top: 48px; padding: 12px 4%; }
-      .logo-text { font-size: 1.15rem; }
-      .nav-insta-link span { display: none; } /* Hide text on small phones, leave icon */
-      .nav-cta { padding: 8px 14px; font-size: 0.8rem; }
-      .hero { padding-top: 160px; padding-bottom: 40px; }
-      .hero-btns { flex-direction: column; width: 100%; max-width: 280px; }
-      .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 14px 24px; }
-      .modal-box { padding: 36px 20px; }
-      #services, #how, #pricing { padding: 60px 4%; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 16px; text-align: center; }
+    
+@media (max-width: 640px) {
+      .top-contact-banner { 
+        font-size: 0.74rem; 
+        padding: 10px 14px; 
+        line-height: 1.5; 
+      }
+
+      nav { 
+        top: 58px; 
+        padding: 12px 16px; 
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .logo-text { 
+        font-size: 1rem; 
+      }
+
+      .nav-links-right {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .nav-insta-link span { 
+        display: inline-block;
+        font-size: 0.78rem;
+        word-break: break-word;
+      }
+
+      .nav-cta { 
+        padding: 10px 14px; 
+        font-size: 0.78rem; 
+      }
+
+      .hero { 
+        padding-top: 210px; 
+        padding-bottom: 40px; 
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        letter-spacing: -1px;
+      }
+
+      .hero-sub {
+        font-size: 0.96rem;
+        line-height: 1.7;
+        padding: 0 8px;
+      }
+
+      .hero-btns { 
+        flex-direction: column; 
+        width: 100%; 
+        max-width: 100%; 
+      }
+
+      .btn-primary, 
+      .btn-outline { 
+        width: 100%; 
+        text-align: center; 
+        padding: 14px 20px; 
+      }
+
+      .services-grid,
+      .pricing-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card,
+      .pricing-card,
+      .step {
+        padding: 28px 20px;
+      }
+
+      .modal-box { 
+        padding: 32px 18px; 
+        border-radius: 22px;
+      }
+
+      #services, 
+      #how, 
+      #pricing { 
+        padding: 55px 16px; 
+      }
+
+      .section-sub {
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
+      footer { 
+        flex-direction: column; 
+        gap: 16px; 
+        text-align: center; 
+        padding: 32px 18px;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+      }
     }
+
   </style>
 </head>
 <body>
@@ -456,7 +554,7 @@
 
   <div class="top-contact-banner">
     Connect instantly on Instagram for updates and details:
-    <a href="https://www.instagram.com/wildwandererx_200/" target="_blank">
+    <a href="https://www.instagram.com/wildwandererx_200/" target="_blank" rel="noopener noreferrer">
       <svg style="width:14px; height:14px; fill:currentColor; vertical-align:middle;" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
       @wildwandererx_200
     </a>
@@ -476,14 +574,11 @@
         <path d="M28 15L33 21L28 27" stroke="url(#lg1)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
         <circle cx="21" cy="21" r="3" fill="url(#lg1)"/>
       </svg>
-      <span class="logo-text">CodeNexus</span>
+      <span class="logo-text" style="font-weight:800; letter-spacing:-0.8px;">CodeNexus</span>
     </a>
     
     <div class="nav-links-right">
-      <a href="https://www.instagram.com/wildwandererx_200/" target="_blank" class="nav-insta-link">
-        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        <span>Instagram</span>
-      </a>
+      <a href="https://www.instagram.com/wildwandererx_200/" target="_blank" rel="noopener noreferrer" class="nav-insta-link"><span>@wildwandererx_200</span></a>
       <label for="modal-toggle" class="cta-label nav-cta">Get Started</label>
     </div>
   </nav>
@@ -495,7 +590,7 @@
       <h2>Start Your Project</h2>
       <p class="modal-sub">Ready to build your next custom interface? Send a direct message over to get started instantly.</p>
 
-      <a href="https://www.instagram.com/wildwandererx_200/" target="_blank" class="insta-btn">
+      <a href="https://www.instagram.com/wildwandererx_200/" target="_blank" rel="noopener noreferrer" class="insta-btn">
         <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
         <span>DM on Instagram 🚀</span>
       </a>
@@ -520,33 +615,11 @@
   <section id="services">
     <div class="reveal">
       <div class="section-label">What We Build</div>
-      <h2>Every Kind of Website,<br>Built to Perfection</h2>
-      <p class="section-sub">From modern landing pages to clean online stores—delivered with ultra-fast optimization.</p>
+      <h2>Websites We Create</h2>
+      <p class="section-sub">🛒 E-Commerce &nbsp;&nbsp; 🎨 Portfolio &nbsp;&nbsp; 🚀 Landing Pages &nbsp;&nbsp; 📱 Business Sites &nbsp;&nbsp; 💻 Web Apps</p>
     </div>
     
-    <div class="services-grid reveal">
-      <label for="modal-toggle" class="service-card">
-        <div class="service-icon">🏪</div>
-        <h3>E-Commerce Stores</h3>
-        <p>Full online shops integrated with seamless mobile-first layouts and fast payment checkouts.</p>
-        <span class="card-get-started">Get started →</span>
-      </label>
-      
-      <label for="modal-toggle" class="service-card">
-        <div class="service-icon">🎨</div>
-        <h3>Portfolio Sites</h3>
-        <p>Stunning spaces designed beautifully to present your unique creative work and expertise.</p>
-        <span class="card-get-started">Get started →</span>
-      </label>
-      
-      <label for="modal-toggle" class="service-card">
-        <div class="service-icon">🚀</div>
-        <h3>Landing Pages</h3>
-        <p>High-conversion structures engineered cleanly to present products or launch ideas with impact.</p>
-        <span class="card-get-started">Get started →</span>
-      </label>
-    </div>
-  </section>
+    </section>
 
   <section id="how">
     <div class="reveal">
@@ -615,11 +688,11 @@
     <div class="logo">
       <span class="logo-text" style="font-size:1rem;">CodeNexus</span>
     </div>
-    <p class="footer-copy">© 2026 CodeNexus. Designed by <a href="https://www.instagram.com/wildwandererx_200/" target="_blank">@wildwandererx_200</a>.</p>
+    <p class="footer-copy">© 2026 CodeNexus. Designed by <a href="https://www.instagram.com/wildwandererx_200/" target="_blank" rel="noopener noreferrer">@wildwandererx_200</a>.</p>
     <div class="footer-links">
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
-      <a href="https://www.instagram.com/wildwandererx_200/" target="_blank" style="color: #dc2743; font-weight: 700;">Instagram Profile</a>
+      <a href="https://www.instagram.com/wildwandererx_200/" target="_blank" rel="noopener noreferrer" style="color: #dc2743; font-weight: 700;">Instagram Profile</a>
     </div>
   </footer>
 
